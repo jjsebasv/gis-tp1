@@ -6,9 +6,27 @@ angular.module('app-gistp').controller('LandingController',
       this.markers = [];
       this.actualCompany = null;
 
+      this.defaultMarker = 'assets/default-marker.png';
+      this.underConstructionMarker = 'assets/working-marker.png';
+
+      this.toggleHide = (arg) => {
+        this.markers.forEach(
+          (m) => {
+              if (m.self.gradoAvance === arg) {
+                m.options.visible = !m.options.visible;
+              }
+          })
+      };
+
+      this.showAll = () => {
+        this.markers.forEach(
+          (m) => {
+            m.options.visible = true;
+          })
+      };
+
       distritoTecnologico.companies.forEach(
         (company, index) => {
-          console.log(company.empresa);
           const marker = {
             id: index,
             coords: {
@@ -16,10 +34,15 @@ angular.module('app-gistp').controller('LandingController',
               longitude: company.longitud
             },
             events: {
-              click: (marker, eventName, args) => {
-                  this.actualCompany = company;
+              click: () => {
+                this.actualCompany = company;
               }
-            }
+            },
+            options: {
+              icon: company.gradoAvance === 'En Obra' ? this.underConstructionMarker : this.defaultMarker,
+              visible: true
+            },
+            self: company
           };
           this.markers.push(marker);
         });

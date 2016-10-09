@@ -5,11 +5,19 @@ h1
 h2
   | {{ landingCtrl.variable }}
 
+span.button-group
+  button(ng-click="landingCtrl.toggleHide('En Obra')")
+    | Hide under construction
+  button(ng-click="landingCtrl.toggleHide('En Operacion')")
+    | Hide in operation
+  button(ng-click="landingCtrl.showAll()")
+    | Show all
+
 h3
   | Here's the map
 ui-gmap-google-map(center='landingCtrl.map.center' zoom='landingCtrl.map.zoom')
   span(ng-repeat='marker in landingCtrl.markers')
-    ui-gmap-marker(coords='marker.coords' idkey='marker.id' events='marker.events')
+    ui-gmap-marker(coords='marker.coords' idkey='marker.id' events='marker.events' options='marker.options')
 
 .actual-company(ng-if='landingCtrl.actualCompany')
   h3
