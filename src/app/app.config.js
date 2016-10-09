@@ -1,6 +1,6 @@
-angular.module('app-gistp').config([
-  'RestangularProvider', 'configuration', 'localStorageServiceProvider',
-  function (RestangularProvider, configuration, localStorageServiceProvider) {
+angular.module('app-gistp', ['uiGmapgoogle-maps']).config([
+  'RestangularProvider', 'configuration', 'localStorageServiceProvider', 'uiGmapGoogleMapApiProvider',
+  function (RestangularProvider, configuration, localStorageServiceProvider, uiGmapGoogleMapApiProvider) {
 
     // Restangular Setup
     RestangularProvider.setBaseUrl(configuration.apiUrl);
@@ -8,5 +8,11 @@ angular.module('app-gistp').config([
 
     // Local Storage Setup
     localStorageServiceProvider.setPrefix(window.btoa('app-/* @echo environment */'));
+
+    // Google maps
+    uiGmapGoogleMapApiProvider.configure({
+      v: '3.20',
+      libraries: 'weather,geometry,visualization'
+    });
   }
 ]);

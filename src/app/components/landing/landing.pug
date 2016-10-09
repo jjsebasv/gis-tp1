@@ -1,4 +1,18 @@
+script(src='//maps.googleapis.com/maps/api/js?sensor=false')
+
 h1
   | Some text over here
 h2
   | {{ landingCtrl.variable }}
+
+h3
+  | Here's the map
+ui-gmap-google-map(center='landingCtrl.map.center' zoom='landingCtrl.map.zoom')
+  span(ng-repeat='marker in landingCtrl.markers')
+    ui-gmap-marker(coords='marker.coords' idkey='marker.id' events='marker.events')
+
+.actual-company(ng-if='landingCtrl.actualCompany')
+  h3
+    | Here's the selected company
+  span
+    | {{ landingCtrl.actualCompany.empresa }}

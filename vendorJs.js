@@ -1,6 +1,6 @@
 module.exports = [
-  "angular/angular.js",
   "lodash/dist/lodash.js",
+  "angular/angular.js",
   "jquery/dist/jquery.js",
   'angular-ui-router/release/angular-ui-router.js',
   "underscore/underscore.js",

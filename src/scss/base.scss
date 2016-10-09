@@ -5,10 +5,9 @@ body {
 .center {
   background-color: $translucent-white;
   height: 100%;
-  left: 20%;
   position: absolute;
   text-align: center;
-  width: 60%;
+  width: 100%;
 
   h1 {
     color: $wolox-green;
@@ -17,4 +16,9 @@ body {
 
 .class-to-be-purified {
   color: $translucent-white;
+}
+
+// Google maps
+.angular-google-map-container {
+  height: 600px;
 }

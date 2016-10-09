@@ -5,7 +5,7 @@ import { getConfigKeys } from '../config';
 const taskOptions = getConfigKeys();
 const localConfig = {
   src: './build/css/application.css',
-  vendorSrc: './build/css/vendor.css',
+  vendorSrc: './build/css/application.css',
   files: ['./build/**/*.html', './build/**/*.js'],
   dest: './build/css'
 };

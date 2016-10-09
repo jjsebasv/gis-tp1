@@ -7,6 +7,7 @@ const taskOptions = getConfigKeys();
 
 const localConfig = {
   buildSrc: './build/',
+  fallbackFile: './build/index.html',
   appFiles: './build/**/*.*',
   defaultPort: 3000
 };
