@@ -8,25 +8,32 @@ angular.module('app-gistp').controller('LandingController',
 
       this.defaultMarker = 'assets/default-marker.png';
       this.underConstructionMarker = 'assets/working-marker.png';
+      this.itbaMarker = 'assets/itba-marker.png';
 
       this.toggleHide = (arg) => {
         this.markers.forEach(
           (m) => {
-              if (m.self.gradoAvance === arg) {
-                m.options.visible = !m.options.visible;
-              }
-          })
+            if (m.self.gradoAvance === arg) {
+              m.options.visible = !m.options.visible;
+            }
+          });
       };
 
       this.showAll = () => {
         this.markers.forEach(
           (m) => {
             m.options.visible = true;
-          })
+          });
       };
 
       distritoTecnologico.companies.forEach(
         (company, index) => {
+          let markerIcon = '';
+          if (company.empresa === 'ITBA') {
+            markerIcon = this.itbaMarker;
+          } else {
+            markerIcon = company.gradoAvance === 'En Obra' ? this.underConstructionMarker : this.defaultMarker;
+          }
           const marker = {
             id: index,
             coords: {
@@ -39,7 +46,7 @@ angular.module('app-gistp').controller('LandingController',
               }
             },
             options: {
-              icon: company.gradoAvance === 'En Obra' ? this.underConstructionMarker : this.defaultMarker,
+              icon: markerIcon,
               visible: true
             },
             self: company
