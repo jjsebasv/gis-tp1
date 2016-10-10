@@ -1,0 +1,13 @@
+
+<script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+<h1>Some text over here</h1>
+<h2>{{ landingCtrl.variable }}</h2><span class="button-group">
+  <button ng-click="landingCtrl.toggleHide('En Obra')">Hide under construction</button>
+  <button ng-click="landingCtrl.toggleHide('En Operacion')">Hide in operation</button>
+  <button ng-click="landingCtrl.showAll()">Show all</button></span>
+<h3>Here's the map</h3>
+<ui-gmap-google-map center="landingCtrl.map.center" zoom="landingCtrl.map.zoom"><span ng-repeat="marker in landingCtrl.markers">
+    <ui-gmap-marker coords="marker.coords" idkey="marker.id" events="marker.events" options="marker.options"></ui-gmap-marker></span></ui-gmap-google-map>
+<div class="actual-company" ng-if="landingCtrl.actualCompany">
+  <h3>Here's the selected company</h3><span>{{ landingCtrl.actualCompany.empresa }}</span>
+</div>

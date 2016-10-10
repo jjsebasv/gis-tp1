@@ -1,0 +1,7 @@
+'use strict';
+
+(function () {
+
+  console.log('WOLOX');
+})();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImpzL2luZGV4LmpzIl0sIm5hbWVzIjpbImNvbnNvbGUiLCJsb2ciXSwibWFwcGluZ3MiOiI7O0FBQUEsQ0FBQyxZQUFZOztBQUVYQSxVQUFRQyxHQUFSLENBQVksT0FBWjtBQUVELENBSkQiLCJmaWxlIjoianMvaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyIoZnVuY3Rpb24gKCkge1xuXG4gIGNvbnNvbGUubG9nKCdXT0xPWCcpO1xuXG59KSgpO1xuIl0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
