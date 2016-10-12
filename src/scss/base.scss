@@ -18,7 +18,16 @@ body {
   color: $translucent-white;
 }
 
+
+// Content
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // Google maps
 .angular-google-map-container {
   height: 600px;
+  width: 70vw;
 }

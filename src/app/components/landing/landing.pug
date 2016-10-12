@@ -14,13 +14,23 @@ span.button-group
     | Show all
 
 h3
-  | Here's the map
-ui-gmap-google-map(center='landingCtrl.map.center' zoom='landingCtrl.map.zoom')
-  span(ng-repeat='marker in landingCtrl.markers')
-    ui-gmap-marker(coords='marker.coords' idkey='marker.id' events='marker.events' options='marker.options')
+  | Buscador
+select(chosen ng-change="landingCtrl.seeOnly()" options='landingCtrl.companies' ng-model='landingCtrl.actualCompany' ng-options='s as s.empresa for s in landingCtrl.companies')
 
-.actual-company(ng-if='landingCtrl.actualCompany')
-  h3
-    | Here's the selected company
-  span
-    | {{ landingCtrl.actualCompany.empresa }}
+.content-wrapper
+  .map-container
+    h3
+      | Here's the map
+    ui-gmap-google-map(center='landingCtrl.map.center' zoom='landingCtrl.map.zoom')
+      span(ng-repeat='marker in landingCtrl.markers')
+        ui-gmap-marker(coords='marker.coords' idkey='marker.id' events='marker.events' options='marker.options')
+
+  .actual-company(ng-if='landingCtrl.actualCompany')
+    h3
+      | Here's the selected company
+    h6
+      | {{ landingCtrl.actualCompany.empresa }}
+    h6
+      | {{ landingCtrl.actualCompany.direccion }}
+    h6
+      | Empresa del tipo {{ landingCtrl.actualCompany.sector }}
