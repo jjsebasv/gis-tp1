@@ -1,6 +1,6 @@
 angular.module('app-gistp').controller('LandingController',
-  ['uiGmapGoogleMapApi', 'distritoTecnologico',
-    function(uiGmapGoogleMapApi, distritoTecnologico) {
+  ['$scope', 'uiGmapGoogleMapApi', 'distritoTecnologico',
+    function($scope, uiGmapGoogleMapApi, distritoTecnologico) {
       this.variable = 'hola';
       this.map = { center: { latitude: -34.6378184, longitude: -58.4104137 }, zoom: 14 };
       this.markers = [];
@@ -26,7 +26,24 @@ angular.module('app-gistp').controller('LandingController',
           });
       };
 
-      distritoTecnologico.companies.forEach(
+      this.companies = distritoTecnologico.companies;
+
+      $scope.$watch(() => this.actualCompany, (newValue, oldValue) => {
+        console.log(newValue);
+        this.markers.forEach(
+          (m) => {
+            if (m.self.nro === newValue.nro) {
+              m.options.icon = this.itbaMarker;
+            } else if (m.self.sector === newValue.sector) {
+              m.options.icon = this.defaultMarker;
+              m.options.visible = true;
+            } else {
+              m.options.visible = false;
+            }
+          });
+      });
+
+      this.companies.forEach(
         (company, index) => {
           let markerIcon = '';
           if (company.empresa === 'ITBA') {
@@ -53,10 +70,6 @@ angular.module('app-gistp').controller('LandingController',
           };
           this.markers.push(marker);
         });
-
-      uiGmapGoogleMapApi.then((maps) => {
-        console.log(maps);
-      });
 
 
     }]);

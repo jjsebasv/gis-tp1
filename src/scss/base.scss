@@ -19,6 +19,20 @@ body {
 }
 
 // Google maps
+.content-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+
+  .map-wrapper {
+    width: 70%;
+  }
+
+  .actual-company {
+    width: 25%;
+  }
+}
+
 .angular-google-map-container {
   height: 600px;
 }

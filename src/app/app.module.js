@@ -1,5 +1,6 @@
 angular.module(
   'app-gistp', [
     'ui.router',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'angular.chosen'
   ]);
