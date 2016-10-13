@@ -5,12 +5,16 @@ h2
   | {{ landingCtrl.variable }}
 
 span.button-group
-  button(ng-click="landingCtrl.toggleHide('En Obra')")
-    | Hide under construction
-  button(ng-click="landingCtrl.toggleHide('En Operacion')")
-    | Hide in operation
-  button(ng-click="landingCtrl.showAll()")
-    | Show all
+  span(ng-show="landingCtrl.default")
+    button(ng-click="landingCtrl.toggleHide('En Obra')")
+      | Hide under construction
+    button(ng-click="landingCtrl.toggleHide('En Operacion')")
+      | Hide in operation
+  span(ng-repeat="sector in landingCtrl.sectors track by $index")
+    button(ng-click="landingCtrl.seeOnlySector(sector, false)")
+      | See companies of sector {{sector}}
+  button(ng-click="landingCtrl.showAll()" ng-hide="landingCtrl.default")
+    | Restore default
 
 .selector-wrapper
   select(chosen options='landingCtrl.companies' ng-model='landingCtrl.actualCompany' ng-options='s as s.empresa for s in landingCtrl.companies')
@@ -19,11 +23,12 @@ span.button-group
   .map-wrapper
     h3
       | Here's the map
-    h4(ng-if="landingCtrl.actualCompany")
-      | Companies of sector: {{landingCtrl.actualCompany.sector}} are displayed
+    h4(ng-if="landingCtrl.actualSector")
+      | Companies of sector {{landingCtrl.actualSector | lowercase }} are displayed
     ui-gmap-google-map(center='landingCtrl.map.center' zoom='landingCtrl.map.zoom')
       span(ng-repeat='marker in landingCtrl.markers')
         ui-gmap-marker(coords='marker.coords' idkey='marker.id' events='marker.events' options='marker.options')
+      ui-gmap-polygon(path='landingCtrl.polygon' fill="{color: '#2c8aa7'}" stroke="{ color: '#2c8aa7', weight: 3, opacity: '1.0' }" visible='true' geodesic='true' fit='false' editable='false' static='true' ng-cloak='')
 
   .actual-company(ng-if='landingCtrl.actualCompany')
     h3
@@ -37,3 +42,22 @@ span.button-group
     span(ng-if="landingCtrl.actualCompany.url")
       a(ng-href="{{landingCtrl.actualCompany.url}}" target="_blank")
         | More info here
+
+.default-references(ng-show="landingCtrl.default")
+  span
+    img(ng-src="{{landingCtrl.defaultMarker}}")
+    | Companies in Operation
+  span
+    img(ng-src="{{landingCtrl.underConstructionMarker}}")
+    | Companies under construction
+  span
+    img(ng-src="{{landingCtrl.itbaMarker}}")
+    | ITBA
+
+.selected-references(ng-if="landingCtrl.actualCompany != null")
+  span
+    img(ng-src="{{landingCtrl.defaultMarker}}")
+    | Companies of sector {{landingCtrl.actualSector | lowercase}}
+  span
+    img(ng-src="{{landingCtrl.itbaMarker}}")
+    | Selected Company

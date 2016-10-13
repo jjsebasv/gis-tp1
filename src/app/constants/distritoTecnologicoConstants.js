@@ -4964,7 +4964,7 @@ angular.module('app-gistp').constant('distritoTecnologico', {
 			"nro": 192,
 			"empresa": "FUSAP",
 			"origen": "Nac.",
-			"sector": "software",
+			"sector": "SOFTWARE",
 			"gradoAvance": "En Operacion",
 			"direccion": "Av.Caseros 2862 3°B",
 			"latitud": -34.636776,
@@ -6526,5 +6526,199 @@ angular.module('app-gistp').constant('distritoTecnologico', {
 			"Asignee": "Martin Goffan",
 			"ExtraCol": "LINESTRING (-58.398177 -34.634612, -58.3982191 -34.6345677)"
 		}
+	],
+	distrito: [
+	   {
+	      latitude: -34.6328725,
+	      longitude: -58.4115171
+	   },
+	   {
+	      latitude: -34.6340752,
+	      longitude: -58.4110424
+	   },
+	   {
+	      latitude: -34.6343312,
+	      longitude: -58.4109673
+	   },
+	   {
+	      latitude: -34.6351809,
+	      longitude: -58.4105113
+	   },
+	   {
+	      latitude: -34.6356885,
+	      longitude: -58.4105355
+	   },
+	   {
+	      latitude: -34.6379439,
+	      longitude: -58.4112382
+	   },
+	   {
+	      latitude: -34.638233,
+	      longitude: -58.4113052
+	   },
+	   {
+	      latitude: -34.638511,
+	      longitude: -58.4114045
+	   },
+	   {
+	      latitude: -34.6434188,
+	      longitude: -58.4134242
+	   },
+	   {
+	      latitude: -34.6434342,
+	      longitude: -58.4133571
+	   },
+	   {
+	      latitude: -34.6485712,
+	      longitude: -58.4120992
+	   },
+	   {
+	      latitude: -34.6476356,
+	      longitude: -58.4064236
+	   },
+	   {
+	      latitude: -34.6474282,
+	      longitude: -58.4050423
+	   },
+	   {
+	      latitude: -34.6473157,
+	      longitude: -58.4043556
+	   },
+	   {
+	      latitude: -34.6470266,
+	      longitude: -58.4027329
+	   },
+	   {
+	      latitude: -34.6468214,
+	      longitude: -58.4015286
+	   },
+	   {
+	      latitude: -34.6467817,
+	      longitude: -58.4015366
+	   },
+	   {
+	      latitude: -34.6467133,
+	      longitude: -58.4010592
+	   },
+	   {
+	      latitude: -34.6466228,
+	      longitude: -58.4008071
+	   },
+	   {
+	      latitude: -34.6465301,
+	      longitude: -58.4006301
+	   },
+	   {
+	      latitude: -34.6464132,
+	      longitude: -58.400453
+	   },
+	   {
+	      latitude: -34.6464022,
+	      longitude: -58.4004611
+	   },
+	   {
+	      latitude: -34.6463448,
+	      longitude: -58.4003538
+	   },
+	   {
+	      latitude: -34.6458991,
+	      longitude: -58.4004933
+	   },
+	   {
+	      latitude: -34.6458593,
+	      longitude: -58.4003511
+	   },
+	   {
+	      latitude: -34.6445839,
+	      longitude: -58.3973819
+	   },
+	   {
+	      latitude: -34.6420661,
+	      longitude: -58.3914247
+	   },
+	   {
+	      latitude: -34.6408083,
+	      longitude: -58.3914837
+	   },
+	   {
+	      latitude: -34.6401749,
+	      longitude: -58.3899012
+	   },
+	   {
+	      latitude: -34.6399587,
+	      longitude: -58.3899173
+	   },
+	   {
+	      latitude: -34.639418,
+	      longitude: -58.3899602
+	   },
+	   {
+	      latitude: -34.6376636,
+	      longitude: -58.3900943
+	   },
+	   {
+	      latitude: -34.636366,
+	      longitude: -58.3901882
+	   },
+	   {
+	      latitude: -34.634073,
+	      longitude: -58.3903733
+	   },
+	   {
+	      latitude: -34.6325392,
+	      longitude: -58.3905557
+	   },
+	   {
+	      latitude: -34.6303609,
+	      longitude: -58.3908132
+	   },
+	   {
+	      latitude: -34.6282841,
+	      longitude: -58.3910653
+	   },
+	   {
+	      latitude: -34.6273019,
+	      longitude: -58.3911833
+	   },
+	   {
+	      latitude: -34.6272357,
+	      longitude: -58.3911887
+	   },
+	   {
+	      latitude: -34.6272622,
+	      longitude: -58.3923098
+	   },
+	   {
+	      latitude: -34.6283856,
+	      longitude: -58.3987015
+	   },
+	   {
+	      latitude: -34.6285291,
+	      longitude: -58.3999944
+	   },
+	   {
+	      latitude: -34.6288138,
+	      longitude: -58.4024271
+	   },
+	   {
+	      latitude: -34.6294759,
+	      longitude: -58.408328
+	   },
+	   {
+	      latitude: -34.6303322,
+	      longitude: -58.4117988
+	   },
+	   {
+	      latitude: -34.6304735,
+	      longitude: -58.4117907
+	   },
+	   {
+	      latitude: -34.6316917,
+	      longitude: -58.4116513
+	   },
+		 {
+	      latitude: -34.6328725,
+	      longitude: -58.4115171
+	   }
 	]
 });
